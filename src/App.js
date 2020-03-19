@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 
 import './App.scss';
 import reducer from './reducers/reducer';
+import Counter from './components/Counter';
 
 const store = createStore(
   reducer,
@@ -13,6 +14,7 @@ const store = createStore(
 const App = () => {
   return (
     <Provider store={store}>
+      <Counter />
     </Provider>
   );
 };
