@@ -1,12 +1,19 @@
 import React from 'react';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 
 import './App.scss';
+import reducer from './reducers/reducer';
+
+const store = createStore(
+  reducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+);
 
 const App = () => {
   return (
-    <div className="App">
-      <h1>Counter</h1>
-    </div>
+    <Provider store={store}>
+    </Provider>
   );
 };
 
